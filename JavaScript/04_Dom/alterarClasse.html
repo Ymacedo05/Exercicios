@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 100vh;
+        }
+        .div{
+            border: 4px solid black;
+            border-radius: 10px;
+            width: 300px;
+            height: 120px;
+            margin-bottom: 5px;
+            box-shadow: 0px 0px 4px gray;
+        }
+        input{
+            width: 100px;
+            height: 40px;
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 0px 2px black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .apagar{
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="div"></div>
+    <input type="button" value="Apagar" id="btn">
+
+    <script>      
+        let btn = document.querySelector("#btn")
+        let aux = 0
+
+        function apagar(){
+            let div = document.querySelector(".div")
+            //div.classList.toggle("apagar")
+            if(aux === 0){
+                div.classList.add("apagar")
+                btn.value = "Acender"
+                aux = 1
+            } else {
+                div.classList.remove("apagar")
+                btn.value = "Apagar"
+                aux = 0
+            }
+        }
+
+        btn.addEventListener("click", apagar)
+    </script>
+</body>
+</html>

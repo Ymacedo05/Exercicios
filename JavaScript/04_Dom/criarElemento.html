@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando elementos</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            outline: none;
+        }
+
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            color: green;
+            flex-direction: column;
+        }
+        div{
+            border: 2px solid green;
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+        input[type="text"]{
+            background-color: black;
+            border: 1px solid green;
+            height: 20px;
+            color: green;
+            padding-left: 4px;
+        }
+        input[type="button"]{
+            background-color: green;
+            color: black;
+            border: 2px solid black;
+            padding: 3px;
+            border-radius: 5px;
+            margin:2px;
+            box-shadow: 0px 0px 0px 1px green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="ul">
+            <li>Uva</li>
+            <li>Maçã</li>
+            <li>Mamão</li>
+        </ul>
+    </div>
+
+    <div>
+        <input type="text" id="ipText">
+        <input type="button" value="enviar" id="btn">
+    </div>
+
+    <script>
+        let btn = document.querySelector("#btn")
+
+        function enviar(){
+            let texto = document.querySelector("#ipText")
+            
+            let pai = document.querySelector("#ul")
+            let novoEelemento = document.createElement("li")
+            novoEelemento.innerText = texto.value
+            pai.appendChild(novoEelemento)
+            texto.value = ""
+        }
+
+        btn.addEventListener("click", enviar)
+    </script>
+</body>
+</html>
